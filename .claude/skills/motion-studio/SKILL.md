@@ -40,7 +40,8 @@ dependencies: []
 
 מצב ההתקנה נשמר ב-**`~/.motion-studio/state.json`** (בתיקיית הבית של המשתמש, כדי שישרוד התקנה מחדש של הסקיל). `<SKILL>/state.json` הוא רק ברירת מחדל ריקה, ולא כותבים אליו.
 - `~/.motion-studio/state.json` קיים עם `"setup_done": true`: מוודאים שהנתיב ב-`python` עדיין קיים (`"<python>" --version`) וממשיכים לשלב 2. מעכשיו `PY` הוא הנתיב הזה.
-- חסר, או `false`: פועלים לפי `references/setup.md`. קלוד מתקין, המשתמש רק מאשר. שלב אחד בכל פעם, מק או ווינדוס לפי הסביבה. בסוף, רק אחרי בדיקת אמת, כותבים את `~/.motion-studio/state.json`.
+- חסר, או `false`, בסביבת ענן של לינוקס שבה `pip install playwright` חסום ויש Chromium מותקן (למשל `/opt/pw-browsers`): לא מתקינים כלום. `PY` הוא `<SKILL>/compat/python` (python3 עם תחליף מקומי ל-playwright), מריצים את בדיקת האמת של שלב 6 ב-`references/setup.md` איתו, וכותבים את `state.json` עם הנתיב הזה.
+- חסר, או `false` (בכל מקרה אחר): פועלים לפי `references/setup.md`. קלוד מתקין, המשתמש רק מאשר. שלב אחד בכל פעם, מק או ווינדוס לפי הסביבה. בסוף, רק אחרי בדיקת אמת, כותבים את `~/.motion-studio/state.json`.
 
 ## 2. בחירת סגנון
 
