@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<title>motion</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+html,body{margin:0;background:#000}
+#stage{position:relative;overflow:hidden;-webkit-font-smoothing:antialiased;font-family:'Noto Sans Hebrew',sans-serif}
+#scenes{position:absolute;left:0;top:0;width:100%;height:100%}
+.scene{position:absolute;left:0;top:0;overflow:hidden;display:none}
+.a{position:absolute;left:0;top:0}
+.g{position:absolute;width:0;height:0;transform-origin:0 0}
+.tx{position:absolute;left:0;top:0;white-space:nowrap}
+svg{overflow:visible;display:block}
+</style>
+<script>
+// Project settings. render.py and audio.py read them from here, so this is the only place they live.
+window.CONFIG = {
+  W: 1080, H: 1920,     // 1080x1920 Reels/Stories, 1080x1080 square, 1440x1440 UI loops, 1920x1080 landscape
+  DUR: 8,               // seconds
+  FPS: 60,
+  bg: '#0E0E10',
+  palette: {            // the approved colours. Scenes use C.INK, C.RED ... and nothing else
+    INK: '#0E0E10', INK2: '#1B1B1F', PAPER: '#EFEAE2', WHITE: '#F4F1EC',
+    RED: '#E54136', BLUE: '#2E3BFF', YELLOW: '#F7C22F', GREY: '#8C8882',
+  },
+  loop: false,          // true: the last frame equals the first (t wraps at DUR)
+  hold: 0,              // seconds at the end that may stand still (render.py check allows it); style 10 uses 1.5 or more
+  bpm: 120, beat0: 0,   // beat grid: beat(n) = beat0 + n * 60 / bpm
+  music: null,          // {file: 'music.mp3', start: 0, gain: 0} optional, a file the user supplied
+};
+</script>
+</head>
+<body>
+<div id="stage"><div id="scenes"></div></div>
+<script src="core.js"></script>
+<script src="scene.js"></script>
+</body>
+</html>
